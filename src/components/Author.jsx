@@ -10,7 +10,7 @@ export default ({ author, onUpdate, onSave, isLoading }) => (
         background="tint2"
     >
         <Heading paddingBottom={16} >
-            Update Book
+            Update Author
         </Heading>
         <TextInputField
           label="First Name"

@@ -35,21 +35,19 @@ class EditAuthorContainer extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Mutation
-                    mutation={updateAuthor}
-                    onCompleted={() => toaster.success('Author updated!')}
-                >
-                    {(mutate, { loading }) => (
-                        <EditAuthor
-                            isLoading={loading}
-                            author={this.state.author}
-                            onUpdate={this.handleUpdate}
-                            onSave={() => this.handleSave(mutate)}
-                        />
-                    )}
-                </Mutation>
-            </React.Fragment>
+            <Mutation
+                mutation={updateAuthor}
+                onCompleted={() => toaster.success('Author updated!')}
+            >
+                {(mutate, { loading }) => (
+                    <EditAuthor
+                        isLoading={loading}
+                        author={this.state.author}
+                        onUpdate={this.handleUpdate}
+                        onSave={() => this.handleSave(mutate)}
+                    />
+                )}
+            </Mutation>
         );
     }
 }

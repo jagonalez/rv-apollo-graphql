@@ -36,21 +36,19 @@ class EditBookContainer extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Mutation
-                    mutation={updateBook}
-                    onCompleted={() => toaster.success('Book updated!')}
-                >
-                    {(mutate, { loading }) => (
-                        <Book
-                            isLoading={loading}
-                            book={this.state.book}
-                            onUpdate={this.handleUpdate}
-                            onSave={() => this.handleSave(mutate)}
-                        />
-                    )}
-                </Mutation>
-            </React.Fragment>
+            <Mutation
+                mutation={updateBook}
+                onCompleted={() => toaster.success('Book updated!')}
+            >
+                {(mutate, { loading }) => (
+                    <Book
+                        isLoading={loading}
+                        book={this.state.book}
+                        onUpdate={this.handleUpdate}
+                        onSave={() => this.handleSave(mutate)}
+                    />
+                )}
+            </Mutation>
         );
     }
 }

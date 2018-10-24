@@ -1,11 +1,10 @@
 import React from 'react';
-import { Query } from "react-apollo";
+import { Query } from 'react-apollo';
 import { Spinner, toaster } from 'evergreen-ui';
 
 export default (props) => (
     <Query
         {...props}
-
     >
         {({ loading, error, ...data }) => {
             if (loading) {

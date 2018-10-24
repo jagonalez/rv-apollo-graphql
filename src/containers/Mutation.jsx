@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mutation } from "react-apollo";
+import { Mutation } from 'react-apollo';
 import { toaster } from 'evergreen-ui';
 
 export default (props) => (
@@ -11,11 +11,7 @@ export default (props) => (
             if (error) {
                 toaster.danger('Error!');
             }
-            return (
-                <React.Fragment>
-                    {props.children(mutate, data)}
-                </React.Fragment>
-            )
+            return props.children(mutate, data)
         }}
     </Mutation>
 );
